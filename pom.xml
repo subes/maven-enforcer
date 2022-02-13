@@ -28,7 +28,7 @@
   </parent>
   <groupId>org.apache.maven.enforcer</groupId>
   <artifactId>enforcer</artifactId>
-  <version>3.0.1-SNAPSHOT</version>
+  <version>3.0.1-inv</version>
   <packaging>pom</packaging>
 
   <name>Apache Maven Enforcer</name>
@@ -57,12 +57,33 @@
     <system>Jenkins</system>
     <url>https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-enforcer/</url>
   </ciManagement>
-  <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <url>scm:svn:https://svn.apache.org/repos/asf/maven/website/components/${maven.site.path}</url>
-    </site>
-  </distributionManagement>
+  
+
+    <distributionManagement>
+		<repository>
+			<id>invesdwin-oss</id>
+			<name>invesdwin-oss</name>
+			<url>https://invesdwin.de/repo/invesdwin-oss</url>
+		</repository>
+		<snapshotRepository>
+			<id>invesdwin-oss</id>
+			<name>invesdwin-oss</name>
+			<url>https://invesdwin.de/repo/invesdwin-oss</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>invesdwin-oss</id>
+			<url>https://invesdwin.de/repo/invesdwin-oss-remote</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>invesdwin-oss</id>
+			<url>https://invesdwin.de/repo/invesdwin-oss-remote</url>
+		</pluginRepository>
+	</pluginRepositories>
 
   <properties>
     <maven.version>3.1.1</maven.version>
